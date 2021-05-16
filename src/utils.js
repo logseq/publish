@@ -3,7 +3,7 @@ import path from 'path'
 import remark from 'remark'
 import html from 'remark-html'
 
-const repoDirName = 'logseq_repo'
+const repoDirName = 'content'
 
 export async function getPageNames() {
   const pagesDir = path.join(process.cwd(), repoDirName, 'pages')
