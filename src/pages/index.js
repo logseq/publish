@@ -1,5 +1,5 @@
 import Layout from '../components/Layout'
-import PagesNav from '../components/pagesNav'
+import PagesNav from '../components/PagesNav'
 import { getPageNames } from '../utils'
 
 export default function Home({ pages }) {
