@@ -42,9 +42,12 @@ marked.use({
       } else if (pageRefMatches != null) {
         const pageName = pageRefMatches[1]
         if (pageNames.includes(pageName)) {
-          return `
-        <a href="./${pageName}">${pageName}</a>
-        `
+          return text.replace(
+            pageRefRe,
+            `
+        <a class="preview" href="./${pageName}"><span class="text-green-600">[[${pageName}]]</span></a>
+        `,
+          )
         } else {
           return pageName
         }
