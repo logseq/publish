@@ -8,10 +8,10 @@
     "start": "next start"
   },
   "dependencies": {
+    "front-matter": "^4.0.2",
+    "marked": "^2.0.3",
     "next": "10.2.0",
     "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "remark": "^13.0.0",
-    "remark-html": "^13.0.1"
+    "react-dom": "17.0.2"
   }
 }
