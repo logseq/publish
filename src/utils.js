@@ -1,11 +1,15 @@
-import { promises as fs } from 'fs'
+import fs from 'fs'
 import path from 'path'
 import marked from 'marked'
 import fm from 'front-matter'
 
+const { promises: fsPromises } = fs
+
 const repoDirName = 'content'
 const imageLinkRe = /!\[.*]\(.*\/assets\/(.*)\)({.*})?/
 const pageRefRe = /\[\[(.*)\]\]/
+
+const pageNames = getPageNamesSync()
 
 marked.use({
   tokenizer: {
@@ -28,6 +32,8 @@ marked.use({
       const pageRefMatches = text.match(pageRefRe)
 
       if (imageLinkMatches != null) {
+        // TODO: mark sure the image exits, otherwise return the raw text
+
         const imageFileName = imageLinkMatches[1]
         const imageName = path.parse(imageFileName).name
         return `
@@ -35,9 +41,13 @@ marked.use({
         `
       } else if (pageRefMatches != null) {
         const pageName = pageRefMatches[1]
-        return `
+        if (pageNames.includes(pageName)) {
+          return `
         <a href="./${pageName}">${pageName}</a>
         `
+        } else {
+          return pageName
+        }
       } else {
         return text
       }
@@ -45,16 +55,23 @@ marked.use({
   },
 })
 
+function getPageNamesSync() {
+  const pagesDir = path.join(process.cwd(), repoDirName, 'pages')
+  const fileNames = fs.readdirSync(pagesDir)
+
+  return fileNames.map((fileName) => path.parse(fileName).name)
+}
+
 export async function getPageNames() {
   const pagesDir = path.join(process.cwd(), repoDirName, 'pages')
-  const fileNames = await fs.readdir(pagesDir)
+  const fileNames = await fsPromises.readdir(pagesDir)
 
   return fileNames.map((fileName) => path.parse(fileName).name)
 }
 
 export async function getPageHTML(name) {
   const pagePath = path.join(process.cwd(), repoDirName, 'pages', name) + '.md'
-  const text = await fs.readFile(pagePath, 'utf8')
+  const text = await fsPromises.readFile(pagePath, 'utf8')
   const content = fm(text)
 
   return {
