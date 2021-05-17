@@ -1,21 +1,17 @@
-import Link from 'next/link'
+import Layout from '../components/Layout'
+import PagesNav from '../components/pagesNav'
 import { getPageNames } from '../utils'
 
 export default function Home({ pages }) {
-  return (
-    <div>
-      <h1>Logseq Publish</h1>
-      <ul>
-        {pages.map((page) => (
-          <li key={page}>
-            <Link href={`/pages/${encodeURIComponent(page)}`}>
-              <a>{page}</a>
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </div>
+  const nav = <PagesNav pages={pages} />
+
+  const content = (
+    <p className="p-8 text-3xl font-bold pt-36">
+      Logseq Publish is a digital garden combining the content from Logseq and a
+      Next.js template.
+    </p>
   )
+  return <Layout nav={nav} content={content} />
 }
 
 export async function getStaticProps({ params }) {
