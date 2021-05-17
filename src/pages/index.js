@@ -1,21 +1,21 @@
+import Article from '../components/Article'
 import Layout from '../components/Layout'
 import PagesNav from '../components/PagesNav'
-import { getPageNames } from '../utils'
+import { getPageNames, getReadme } from '../utils'
 
-export default function Home({ pages }) {
+export default function Home({ pages, markup }) {
   const nav = <PagesNav pages={pages} />
 
   const content = (
-    <p className="p-8 text-3xl font-bold pt-36">
-      Logseq Publish is a digital garden combining the content from Logseq and a
-      Next.js template.
-    </p>
+    <Article>
+      <div dangerouslySetInnerHTML={{ __html: markup }} />
+    </Article>
   )
   return <Layout nav={nav} content={content} />
 }
 
 export async function getStaticProps({ params }) {
-  const pages = await getPageNames()
+  const [pages, markup] = await Promise.all([getPageNames(), getReadme()])
 
-  return { props: { pages } }
+  return { props: { pages, markup } }
 }

@@ -1,3 +1,4 @@
+import Article from '../../components/Article'
 import Layout from '../../components/Layout'
 import PagesNav from '../../components/PagesNav'
 import { getPageHTML, getPageNames } from '../../utils'
@@ -7,10 +8,10 @@ export default function Page({ page, pages }) {
 
   const nav = <PagesNav pages={pages} />
   const content = (
-    <article className="prose prose-lg mx-auto md:max-w-xl lg:max-w-2xl">
+    <Article>
       <h1>{title}</h1>
       <div dangerouslySetInnerHTML={{ __html: markup }} />
-    </article>
+    </Article>
   )
 
   return <Layout nav={nav} content={content} />

@@ -65,6 +65,12 @@ function getPageNamesSync() {
   return fileNames.map((fileName) => path.parse(fileName).name)
 }
 
+export async function getReadme() {
+  const markdown = await fsPromises.readFile('./README.md', 'utf8')
+
+  return marked(markdown)
+}
+
 export async function getPageNames() {
   const pagesDir = path.join(process.cwd(), repoDirName, 'pages')
   const fileNames = await fsPromises.readdir(pagesDir)

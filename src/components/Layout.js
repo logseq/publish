@@ -7,6 +7,12 @@ import Link from 'next/link'
 export default function Layout({ nav, content }) {
   const [sidebarOpen, setSidebarOpen] = useState(false)
 
+  const logo = (
+    <Link href="/">
+      <a className="font-bold text-xl italic">Logseq Publish</a>
+    </Link>
+  )
+
   return (
     <div className="h-screen flex overflow-hidden bg-gray-100">
       <Transition.Root show={sidebarOpen} as={Fragment}>
@@ -57,34 +63,20 @@ export default function Layout({ nav, content }) {
                   </button>
                 </div>
               </Transition.Child>
-              <div className="flex-shrink-0 flex items-center px-4">
-                <img
-                  className="h-8 w-auto"
-                  src="https://tailwindui.com/img/logos/workflow-logo-indigo-600-mark-gray-800-text.svg"
-                  alt="Workflow"
-                />
-              </div>
+              <div className="flex-shrink-0 flex items-center px-4">{logo}</div>
               <div className="mt-5 flex-1 h-0 overflow-y-auto">
                 <nav className="px-2 space-y-1">{nav}</nav>
               </div>
             </div>
           </Transition.Child>
-          <div className="flex-shrink-0 w-14" aria-hidden="true">
-            {/* Dummy element to force sidebar to shrink to fit close icon */}
-          </div>
+          <div className="flex-shrink-0 w-14" aria-hidden="true"></div>
         </Dialog>
       </Transition.Root>
 
-      {/* Static sidebar for desktop */}
       <div className="hidden md:flex md:flex-shrink-0">
         <div className="flex flex-col w-64">
-          {/* Sidebar component, swap this element with another sidebar if you like */}
           <div className="flex flex-col flex-grow border-r border-gray-200 pt-5 pb-4 bg-white overflow-y-auto">
-            <div className=" px-2">
-              <Link href="/">
-                <a className="font-bold text-xl italic">Logseq Publish</a>
-              </Link>
-            </div>
+            <div className=" px-2">{logo}</div>
             <div className="mt-5 flex-grow flex flex-col">
               <nav className="flex-1 px-2 bg-white space-y-1">{nav}</nav>
             </div>
