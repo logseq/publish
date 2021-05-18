@@ -20,6 +20,9 @@ Logseq Publish is a NextJS template to generate a fast, SEO friendly and scalabl
 - support all Logseq-specific content types
 - search
 - UI/UX improvement
+- graph view
+- table of contents
+- theme
 
 ## Beyond
 
