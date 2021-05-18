@@ -9,7 +9,7 @@ export default function Layout({ nav, content }) {
 
   const logo = (
     <Link href="/">
-      <a className="font-bold text-xl italic">Logseq Publish</a>
+      <a className="font-bold text-green-600 text-xl italic">Logseq Publish</a>
     </Link>
   )
 
