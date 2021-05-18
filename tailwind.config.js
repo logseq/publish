@@ -5,7 +5,7 @@ module.exports = {
       './src/components/**/*.{js,ts,jsx,tsx}',
     ],
     options: {
-      safelist: ['text-green-600'],
+      safelist: ['text-green-600', 'p-8', 'h-96', 'overflow-hidden'],
     },
   },
   darkMode: false, // or 'media' or 'class'
