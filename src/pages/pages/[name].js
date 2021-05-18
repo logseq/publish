@@ -1,3 +1,7 @@
+import { useEffect } from 'react'
+import tippy from 'tippy.js'
+import 'tippy.js/animations/shift-away-subtle.css'
+import 'tippy.js/themes/light.css'
 import Article from '../../components/Article'
 import Layout from '../../components/Layout'
 import PagesNav from '../../components/PagesNav'
@@ -13,6 +17,24 @@ export default function Page({ page, pages }) {
       <div dangerouslySetInnerHTML={{ __html: markup }} />
     </Article>
   )
+
+  useEffect(() => {
+    tippy('a.preview', {
+      theme: 'light',
+      animation: 'shift-away-subtle',
+      onShow(instance) {
+        const { pageName } = instance.reference.dataset
+        const getPagePreview = async () => {
+          const result = await fetch(`/previews/${pageName}`)
+          const html = await result.text()
+          const el = document.createElement('html')
+          el.innerHTML = html
+          instance.setContent(el.querySelector('#page-preview'))
+        }
+        getPagePreview()
+      },
+    })
+  }, [])
 
   return <Layout nav={nav} content={content} />
 }
