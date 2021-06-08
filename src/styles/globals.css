@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.logseq-page li {
+  list-style-type: none;
+}
+
+.prose ul > li::before {
+  display: none;
+}

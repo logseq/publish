@@ -1,31 +1,18 @@
 # Logseq Publish
 
-Logseq Publish is a NextJS template to generate a fast, SEO friendly and scalable site from your Logseq content.
+Logseq Publish is a app that generates a fast, SEO friendly and scalable website from your Logseq graph.
 
 ## How to use
 
-1. Export to markdown in the Logseq desktop app
-2. Clone this repo and replace the `content/pages` and `public/assets` folders with ones exported from Logseq
-3. Run `yarn && yarn dev` to start the site locally
-4. Sign in to [Vercel](https://vercel.com) to deploy
+1. Export to json in the Logseq desktop app.
+2. Clone this repo.
+3. Copy the exported json to the root as data.json.
+4. Copy the whole `assets` folder from Logseq repo to the `public` folder.
+5. Run `yarn && yarn dev` to start the site locally.
+6. (optional) Sign in to [Vercel](https://vercel.com) to deploy.
 
-## What it does under the hood
+## How does it work
 
-- generate static htmls at build time from markdown files exported from Logseq
-- transform Logseq-specific contents (like block ref and asset link) to displayable html
-- core features for a content-heavy website
-
-## TODO
-
-- support all Logseq-specific content types
-- search
-- UI/UX improvement
-- graph view
-- table of contents
-- theme
-
-## Beyond
-
-- incremental static generation at run time (need API support)
-- support other frontend frameworks
-- extract markdown syntax plugins
+1. Logseq exports a json file, which a basically a tree structure consisting of various kinds of block types.
+2. Logseq Publish renders the tree structure recursively, providing different React components for each block type.
+3. Logseq Publish utilizes NextJS to generate static htmls at build time.

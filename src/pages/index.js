@@ -1,21 +1,10 @@
-import Article from '../components/Article'
 import Layout from '../components/Layout'
 import PagesNav from '../components/PagesNav'
-import { getPageNames, getReadme } from '../utils'
+import { pages } from '../utils'
 
-export default function Home({ pages, markup }) {
+export default function Home() {
   const nav = <PagesNav pages={pages} />
 
-  const content = (
-    <Article>
-      <div dangerouslySetInnerHTML={{ __html: markup }} />
-    </Article>
-  )
+  const content = <p>Welcome to Logseq Publish</p>
   return <Layout nav={nav} content={content} />
-}
-
-export async function getStaticProps({ params }) {
-  const [pages, markup] = await Promise.all([getPageNames(), getReadme()])
-
-  return { props: { pages, markup } }
 }
