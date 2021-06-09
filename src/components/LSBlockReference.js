@@ -9,10 +9,10 @@ export default function LSBlockReference({ c: uuid }) {
     const pageName = getPageNameByID(referedBlock.page.id)
 
     return (
-      <Link href={`/pages/${pageName}#${uuid}`}>
-        <a>
+      <Link scroll={false} href={`/pages/${pageName}#${uuid}`}>
+        <div className="ls-block-reference">
           <LSBlock b={referedBlock} />
-        </a>
+        </div>
       </Link>
     )
   } else {

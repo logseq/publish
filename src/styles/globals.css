@@ -9,6 +9,7 @@
 .ls-page-preview {
   max-height: 400px;
   overflow-y: auto;
+  @apply p-4;
 }
 
 .prose ul > li::before {

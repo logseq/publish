@@ -32,8 +32,8 @@ function PageLink({ pageName }) {
   }, [pagePath])
 
   return (
-    <Link href={pagePath}>
-      <a ref={linkRef} className="ls-page-link">
+    <Link scroll={false} href={pagePath}>
+      <a ref={linkRef} className="ls-page-link text-green-600">
         [[{pageName}]]
       </a>
     </Link>
