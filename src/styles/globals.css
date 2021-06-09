@@ -2,8 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-.logseq-page li {
+.ls-page li {
   list-style-type: none;
+}
+
+.ls-page-preview {
+  max-height: 400px;
+  overflow-y: auto;
 }
 
 .prose ul > li::before {

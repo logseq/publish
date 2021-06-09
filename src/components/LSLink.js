@@ -1,5 +1,44 @@
 import Link from 'next/link'
 import { pages } from '../utils'
+import tippy from 'tippy.js'
+import 'tippy.js/dist/tippy.css'
+import { useEffect, useRef } from 'react'
+
+function PageLink({ pageName }) {
+  const linkRef = useRef()
+
+  const pagePath = `/pages/${encodeURIComponent(pageName)}`
+
+  useEffect(() => {
+    const onShow = async (instance) => {
+      const res = await fetch(pagePath)
+      const html = await res.text()
+      const el = document.createElement('html')
+      el.innerHTML = html
+      const lsPage = el.querySelector('.ls-page')
+      lsPage.classList.add('ls-page-preview')
+      instance.setContent(lsPage)
+    }
+    const instance = tippy(linkRef.current, {
+      onShow,
+      maxWidth: 'none',
+      placement: 'auto',
+      theme: 'light',
+      interactive: true,
+    })
+    return () => {
+      instance.destroy()
+    }
+  }, [pagePath])
+
+  return (
+    <Link href={pagePath}>
+      <a ref={linkRef} className="ls-page-link">
+        [[{pageName}]]
+      </a>
+    </Link>
+  )
+}
 
 export default function LSLink({ c }) {
   const linkContent = c.url
@@ -7,11 +46,7 @@ export default function LSLink({ c }) {
   if (linkType === 'Search') {
     const toPage = c.url?.[1]
     if (pages.includes(toPage)) {
-      return (
-        <Link href={`/pages/${toPage}`}>
-          <a>{toPage}</a>
-        </Link>
-      )
+      return <PageLink pageName={toPage} />
     } else {
       return toPage
     }
