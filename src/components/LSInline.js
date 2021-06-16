@@ -3,27 +3,31 @@ import LSInlines from './LSInlines'
 import LSLink from './LSLink'
 import LSTable from './LSTable'
 
+function Plain({ c }) {
+  return <span>{c}</span>
+}
+
+function Code({ c }) {
+  return <code>{c}</code>
+}
+
+function Emphasis({ c }) {
+  let kind = c[0][0]
+  let content = <LSInlines inlines={c[1]} />
+  switch (kind) {
+    case 'Bold':
+      return <b>{content}</b>
+    default:
+      return content
+  }
+}
+
 const INLINE_RENDERERS = {
-  Plain: ({ c }) => {
-    return <span>{c}</span>
-  },
+  Plain,
   Link: LSLink,
   Block_reference: LSBlockReference,
-
-  Code: ({ c }) => {
-    return <code>{c}</code>
-  },
-  Emphasis: ({ c }) => {
-    let kind = c[0][0]
-    let content = <LSInlines inlines={c[1]} />
-    switch (kind) {
-      case 'Bold':
-        return <b>{content}</b>
-      default:
-        return content
-    }
-  },
-
+  Code,
+  Emphasis,
   Table: LSTable,
 }
 

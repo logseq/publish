@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { pages } from '../utils'
 import tippy from 'tippy.js'
 import 'tippy.js/dist/tippy.css'
@@ -52,7 +53,7 @@ export default function LSLink({ c }) {
     }
   } else if (linkType === 'Complex') {
     return (
-      <a target="_blank" href={c.url?.[1]?.link}>
+      <a target="_blank" rel="noreferrer" href={c.url?.[1]?.link}>
         {c.label?.[0]?.[1]}
       </a>
     )
@@ -60,7 +61,7 @@ export default function LSLink({ c }) {
     const path = linkContent[1]
     const src = path.replace('..', '')
 
-    return <img src={src} />
+    return <Image layout="fill" src={src} alt="" />
   } else {
     return null
   }

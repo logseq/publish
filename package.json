@@ -13,11 +13,15 @@
     "@tailwindcss/forms": "^0.3.3",
     "@tailwindcss/typography": "^0.4.1",
     "autoprefixer": "^10.2.6",
-    "next": "10.2.3",
-    "postcss": "^8.3.0",
+    "next": "11.0.0",
+    "postcss": "^8.3.4",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "tailwindcss": "^2.1.4",
     "tippy.js": "^6.3.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.28.0",
+    "eslint-config-next": "^11.0.0"
   }
 }
