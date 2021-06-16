@@ -61,7 +61,7 @@ export default function LSLink({ c }) {
     const path = linkContent[1]
     const src = path.replace('..', '')
 
-    return <Image layout="fill" src={src} alt="" />
+    return <Image width={400} src={src} alt="" />
   } else {
     return null
   }
