@@ -11,13 +11,12 @@ export default function Layout({ nav, content, toc }) {
   )
 
   return (
-    <Flex flexDirection="row">
+    <Flex alignItems="stretch">
       <Flex
-        display={{ base: 'none', md: 'block' }}
+        display={{ base: 'none', md: 'flex' }}
         width="300px"
         flexDirection="column"
         height="100vh"
-        overflowY="auto"
         padding="10px"
       >
         {logo}

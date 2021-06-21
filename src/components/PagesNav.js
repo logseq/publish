@@ -22,7 +22,7 @@ export default function PagesNav({ pages }) {
     : pages
 
   return (
-    <Flex flexDirection="column" flex={1} overflowY="auto">
+    <Flex flexDirection="column" flex={1} minHeight={0}>
       <InputGroup size="sm" marginTop="14px" marginBottom="14px">
         <InputLeftElement pointerEvents="none">
           <SearchIcon />
@@ -38,7 +38,7 @@ export default function PagesNav({ pages }) {
           </InputRightElement>
         )}
       </InputGroup>
-      <Box flex={1} overflowY="auto">
+      <Box flex={1} minHeight={0} overflowY="auto">
         {filteredPages.map((page) => (
           <Link key={page} href={`/pages/${encodeURIComponent(page)}`}>
             <Box
