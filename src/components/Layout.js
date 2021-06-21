@@ -4,7 +4,7 @@ import Link from 'next/link'
 export default function Layout({ nav, content, toc }) {
   const logo = (
     <Link href="/">
-      <Box fontWeight="bold" fontSize="2xl" fontStyle="italic">
+      <Box cursor="pointer" fontWeight="bold" fontSize="2xl" fontStyle="italic">
         Logseq Publish
       </Box>
     </Link>
