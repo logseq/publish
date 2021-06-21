@@ -1,4 +1,4 @@
-import d from '../export.json'
+import d from '../data.json'
 
 const pages = d.blocks
 
