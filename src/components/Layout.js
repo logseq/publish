@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Heading } from '@chakra-ui/react'
+import { Box, Flex } from '@chakra-ui/react'
 import Link from 'next/link'
 
 export default function Layout({ nav, content }) {
@@ -24,6 +24,9 @@ export default function Layout({ nav, content }) {
         {nav}
       </Flex>
       <Box height="100vh" overflowY="auto" flex={1}>
+        <Box cursor="pointer" display={{ md: 'none' }}>
+          {logo}
+        </Box>
         {content}
       </Box>
     </Flex>
