@@ -34,11 +34,11 @@ function PageLink({ pageName }) {
   }, [pagePath])
 
   return (
-    <Box ref={linkRef}>
-      <Link href={pagePath}>
-        <Button variant="link">[[{pageName}]]</Button>
-      </Link>
-    </Box>
+    <Link href={pagePath}>
+      <Button ref={linkRef} variant="link">
+        [[{pageName}]]
+      </Button>
+    </Link>
   )
 }
 
