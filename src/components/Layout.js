@@ -13,6 +13,7 @@ export default function Layout({ nav, content }) {
   return (
     <Flex flexDirection="row">
       <Flex
+        display={{ base: 'none', md: 'block' }}
         width="300px"
         flexDirection="column"
         height="100vh"
