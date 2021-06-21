@@ -4,7 +4,7 @@ export default function LSInlines({ inlines, toc }) {
   return (
     <>
       {inlines.map((inline, index) => (
-        <LSInline key={index} inline={inline} toc />
+        <LSInline key={index} inline={inline} toc={toc} />
       ))}
     </>
   )
