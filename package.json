@@ -8,16 +8,15 @@
     "start": "next start"
   },
   "dependencies": {
-    "@headlessui/react": "^1.2.0",
-    "@heroicons/react": "^1.0.1",
-    "@tailwindcss/forms": "^0.3.3",
-    "@tailwindcss/typography": "^0.4.1",
+    "@chakra-ui/icons": "^1.0.13",
+    "@chakra-ui/react": "^1.6.4",
+    "@emotion/react": "^11.4.0",
+    "@emotion/styled": "^11.3.0",
     "autoprefixer": "^10.2.6",
+    "framer-motion": "^4.1.17",
     "next": "11.0.0",
-    "postcss": "^8.3.5",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "tailwindcss": "^2.2.2",
     "tippy.js": "^6.3.1"
   },
   "devDependencies": {

@@ -1,8 +1,10 @@
-import Link from 'next/link'
-import { pageNames } from '../utils'
+import { Box } from '@chakra-ui/react'
+import { useEffect, useRef } from 'react'
 import tippy from 'tippy.js'
 import 'tippy.js/dist/tippy.css'
-import { useEffect, useRef } from 'react'
+import { pageNames } from '../utils'
+import ExternalLink from './ExternalLink'
+import Link from './Link'
 
 function PageLink({ pageName }) {
   const linkRef = useRef()
@@ -32,11 +34,9 @@ function PageLink({ pageName }) {
   }, [pagePath])
 
   return (
-    <Link scroll={false} href={pagePath}>
-      <a ref={linkRef} className="ls-page-link text-green-600">
-        [[{pageName}]]
-      </a>
-    </Link>
+    <Box ref={linkRef}>
+      <Link href={pagePath}>[[{pageName}]]</Link>
+    </Box>
   )
 }
 
@@ -52,9 +52,7 @@ export default function LSLink({ c }) {
     }
   } else if (linkType === 'Complex') {
     return (
-      <a target="_blank" rel="noreferrer" href={c.url?.[1]?.link}>
-        {c.label?.[0]?.[1]}
-      </a>
+      <ExternalLink href={c.url?.[1]?.link}>{c.label?.[0]?.[1]}</ExternalLink>
     )
   } else if (linkType === 'File') {
     const path = linkContent[1]

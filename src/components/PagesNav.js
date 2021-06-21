@@ -1,11 +1,11 @@
-import Link from 'next/link'
+import Link from './Link'
 
 export default function PagesNav({ pages }) {
   return (
     <ul>
       {pages.map((page) => (
         <li key={page}>
-          <Link scroll={false} href={`/pages/${encodeURIComponent(page)}`}>
+          <Link href={`/pages/${encodeURIComponent(page)}`}>
             <a>{page}</a>
           </Link>
         </li>
