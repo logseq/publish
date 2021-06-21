@@ -1,6 +1,6 @@
 import { Box } from '@chakra-ui/react'
 import { getBlockByID, getPageNameByID } from '../utils'
-import Link from './Link'
+import Link from 'next/link'
 import LSBlock from './LSBlock'
 
 export default function LSBlockReference({ c: id }) {
@@ -10,11 +10,15 @@ export default function LSBlockReference({ c: id }) {
     const pageName = getPageNameByID(id)
 
     return (
-      <Box backgroundColor="grey" padding="7px" className="ls-block-reference">
-        <Link href={`/pages/${pageName}#${id}`}>
+      <Link href={`/pages/${pageName}#${id}`}>
+        <Box
+          padding="7px"
+          className="ls-block-reference"
+          border="1px dashed black"
+        >
           <LSBlock b={referedBlock} />
-        </Link>
-      </Box>
+        </Box>
+      </Link>
     )
   } else {
     return <pre>{id}</pre>

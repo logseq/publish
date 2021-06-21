@@ -1,10 +1,10 @@
-import { Box } from '@chakra-ui/react'
+import { Box, Button } from '@chakra-ui/react'
 import { useEffect, useRef } from 'react'
 import tippy from 'tippy.js'
 import 'tippy.js/dist/tippy.css'
 import { pageNames } from '../utils'
 import ExternalLink from './ExternalLink'
-import Link from './Link'
+import Link from 'next/link'
 
 function PageLink({ pageName }) {
   const linkRef = useRef()
@@ -35,7 +35,9 @@ function PageLink({ pageName }) {
 
   return (
     <Box ref={linkRef}>
-      <Link href={pagePath}>[[{pageName}]]</Link>
+      <Link href={pagePath}>
+        <Button variant="link">[[{pageName}]]</Button>
+      </Link>
     </Box>
   )
 }
