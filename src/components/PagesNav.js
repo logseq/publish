@@ -22,7 +22,7 @@ export default function PagesNav({ pages }) {
     : pages
 
   return (
-    <Flex flexDirection="column" flex={1} minHeight={0}>
+    <Flex fontSize="sm" flexDirection="column" flex={1} minHeight={0}>
       <InputGroup size="sm" marginTop="14px" marginBottom="14px">
         <InputLeftElement pointerEvents="none">
           <SearchIcon />

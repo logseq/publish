@@ -14,7 +14,7 @@ export default function Layout({ nav, content, toc }) {
     <Flex alignItems="stretch">
       <Flex
         display={{ base: 'none', md: 'flex' }}
-        width="300px"
+        width={{ md: 200, lg: 250 }}
         flexDirection="column"
         height="100vh"
         padding="10px"
