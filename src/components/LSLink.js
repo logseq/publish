@@ -1,6 +1,5 @@
 import Link from 'next/link'
-import Image from 'next/image'
-import { pages } from '../utils'
+import { pageNames } from '../utils'
 import tippy from 'tippy.js'
 import 'tippy.js/dist/tippy.css'
 import { useEffect, useRef } from 'react'
@@ -46,7 +45,7 @@ export default function LSLink({ c }) {
   const linkType = linkContent?.[0]
   if (linkType === 'Search') {
     const toPage = c.url?.[1]
-    if (pages.includes(toPage)) {
+    if (pageNames.includes(toPage)) {
       return <PageLink pageName={toPage} />
     } else {
       return toPage
@@ -61,7 +60,7 @@ export default function LSLink({ c }) {
     const path = linkContent[1]
     const src = path.replace('..', '')
 
-    return <Image width={400} src={src} alt="" />
+    return <img src={src} alt="" />
   } else {
     return null
   }

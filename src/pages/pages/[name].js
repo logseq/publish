@@ -3,17 +3,17 @@ import 'tippy.js/themes/light.css'
 import Layout from '../../components/Layout'
 import LSPage from '../../components/LSPage'
 import PagesNav from '../../components/PagesNav'
-import { pages } from '../../utils'
+import { pageNames } from '../../utils'
 
 export default function Page({ name }) {
-  const nav = <PagesNav pages={pages} />
+  const nav = <PagesNav pages={pageNames} />
   const content = <LSPage name={name} />
 
   return <Layout nav={nav} content={content} />
 }
 
 export async function getStaticPaths() {
-  const paths = pages.map((name) => ({
+  const paths = pageNames.map((name) => ({
     params: { name },
   }))
 

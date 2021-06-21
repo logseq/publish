@@ -1,12 +1,12 @@
-import { data } from '../utils'
+import { getPageByName } from '../utils'
 import LSBlocks from './LSBlocks'
 
 export default function LSPage({ name }) {
-  const page = data.pages.find((p) => p.title === name)
+  const page = getPageByName(name)
   return (
     <article className="ls-page prose prose-lg mx-auto md:max-w-xl lg:max-w-2xl">
       <h1>{name}</h1>
-      <LSBlocks blocks={page.content} />
+      <LSBlocks blocks={page.children} />
     </article>
   )
 }

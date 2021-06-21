@@ -1,10 +1,9 @@
-import { getID } from '../utils'
 import LSInlines from './LSInlines'
 
 export default function LSHeading({ b }) {
   const content = <LSInlines inlines={b.title} />
   const level = b['heading-level']
-  const id = getID(b)
+  const { id } = b
 
   switch (level) {
     case 1:

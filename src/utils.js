@@ -1,44 +1,32 @@
-import d from '../data.json'
+import d from '../export.json'
 
-export const data = d
+const pages = d.blocks
 
-const uuidToBlock = createUUIDToBlockMap()
-export function getBlockByUUID(id) {
-  return uuidToBlock[id]
+export let pageNames = []
+export let idToBlock = {}
+
+export function getPageByName(name) {
+  return pages.find((p) => p['page-name'] === name)
 }
 
-export const pages = data.pages.map((p) => p.title)
-
-const idToPageName = createIDToPageNameMap()
+export function getBlockByID(id) {
+  return idToBlock[id].block
+}
 export function getPageNameByID(id) {
-  return idToPageName[id]
+  return idToBlock[id].pageName
 }
 
-function createIDToPageNameMap() {
-  let map = {}
-
-  data.pages.forEach((p) => {
-    map[p.content[0].page.id] = p.title
+function walkPagesTreeAndCreateSupportData() {
+  pages.forEach((page) => {
+    const pageName = page['page-name']
+    pageNames.push(pageName)
+    addBlockToMap({ block: page, pageName })
   })
-
-  return map
 }
+walkPagesTreeAndCreateSupportData()
 
-function createUUIDToBlockMap() {
-  let map = {}
-
-  function addBlockToMap(b) {
-    map[b.uuid.uuid] = b
-    b.children.forEach(addBlockToMap)
-  }
-
-  data.pages.forEach((p) => {
-    p.content.forEach(addBlockToMap)
-  })
-
-  return map
-}
-
-export function getID(b) {
-  return b?.uuid?.uuid
+function addBlockToMap(blockAndPageName) {
+  const { block, pageName } = blockAndPageName
+  idToBlock[block.id] = blockAndPageName
+  block.children.forEach((block) => addBlockToMap({ block, pageName }))
 }
