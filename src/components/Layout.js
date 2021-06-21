@@ -1,7 +1,7 @@
 import { Box, Flex } from '@chakra-ui/react'
 import Link from 'next/link'
 
-export default function Layout({ nav, content }) {
+export default function Layout({ nav, content, toc }) {
   const logo = (
     <Link href="/">
       <Box fontWeight="bold" fontSize="2xl" fontStyle="italic">
@@ -29,6 +29,7 @@ export default function Layout({ nav, content }) {
         </Box>
         {content}
       </Box>
+      {toc}
     </Flex>
   )
 }

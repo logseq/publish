@@ -31,11 +31,16 @@ const INLINE_RENDERERS = {
   Table: LSTable,
 }
 
+const TOC_RENDERERS = {
+  Plain,
+  Emphasis,
+}
+
 const CONSTAINER_INLINES = ['Paragraph']
 
-export default function Inline({ inline }) {
+export default function Inline({ inline, toc }) {
   const [type, content] = inline
-  const InlineComponent = INLINE_RENDERERS[type]
+  const InlineComponent = toc ? TOC_RENDERERS[type] : INLINE_RENDERERS[type]
   if (InlineComponent) {
     return <InlineComponent c={content} />
   } else if (CONSTAINER_INLINES.includes(type)) {

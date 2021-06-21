@@ -3,13 +3,16 @@ import 'tippy.js/themes/light.css'
 import Layout from '../../components/Layout'
 import LSPage from '../../components/LSPage'
 import PagesNav from '../../components/PagesNav'
-import { pageNames } from '../../utils'
+import TOC from '../../components/TOC'
+import { getPageByName, pageNames } from '../../utils'
 
 export default function Page({ name }) {
   const nav = <PagesNav pages={pageNames} />
-  const content = <LSPage name={name} />
+  const page = getPageByName(name)
+  const content = <LSPage page={page} />
+  const toc = <TOC page={page} />
 
-  return <Layout nav={nav} content={content} />
+  return <Layout nav={nav} content={content} toc={toc} />
 }
 
 export async function getStaticPaths() {
