@@ -12,11 +12,19 @@ export default function Layout({ nav, content }) {
 
   return (
     <Flex flexDirection="row">
-      <Box padding="7px">
+      <Flex
+        width="300px"
+        flexDirection="column"
+        height="100vh"
+        overflowY="auto"
+        padding="10px"
+      >
         {logo}
         {nav}
+      </Flex>
+      <Box height="100vh" overflowY="auto" flex={1}>
+        {content}
       </Box>
-      {content}
     </Flex>
   )
 }
