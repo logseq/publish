@@ -24,18 +24,18 @@ export default function PagesNav({ pages }) {
   return (
     <Flex flexDirection="column" flex={1} overflowY="auto">
       <InputGroup size="sm" marginTop="14px" marginBottom="14px">
-        <InputLeftElement pointerEvents="none" children={<SearchIcon />} />
+        <InputLeftElement pointerEvents="none">
+          <SearchIcon />
+        </InputLeftElement>
         <Input
           value={search}
           onChange={(event) => setSearch(event.target.value)}
           placeholder="Type page name to search"
         />
         {searchNotEmpty && (
-          <InputRightElement
-            cursor="pointer"
-            onClick={() => setSearch('')}
-            children={<CloseIcon />}
-          />
+          <InputRightElement cursor="pointer" onClick={() => setSearch('')}>
+            <CloseIcon />
+          </InputRightElement>
         )}
       </InputGroup>
       <Box flex={1} overflowY="auto">
