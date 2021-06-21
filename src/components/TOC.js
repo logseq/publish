@@ -39,7 +39,7 @@ export default function TOC({ page }) {
   return (
     <Box
       as="nav"
-      display={{ base: 'none', md: 'block' }}
+      display={{ base: 'none', lg: 'block' }}
       padding="10px"
       fontSize="sm"
       alignSelf="flex-start"
