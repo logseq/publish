@@ -1,0 +1,4 @@
+.ls-page-preview {
+  max-height: 70vh;
+  overflow-y: auto;
+}
