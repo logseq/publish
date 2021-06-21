@@ -9,7 +9,7 @@ Logseq Publish is a app that generates a fast, SEO friendly and scalable website
 3. Copy the exported json to the root as data.json.
 4. Copy the whole `assets` folder from Logseq repo to the `public` folder.
 5. Run `yarn && yarn dev` to start the site locally.
-6. (optional) Sign in to [Vercel](https://vercel.com) to deploy.
+6. [Deploy](https://nextjs.org/docs/deployment)
 
 ## How does it work
 
