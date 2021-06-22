@@ -1,6 +1,7 @@
 import LSBlockReference from './LSBlockReference'
 import LSInlines from './LSInlines'
 import LSLink from './LSLink'
+import LSSrc from './LSSrc'
 import LSTable from './LSTable'
 
 function Plain({ c }) {
@@ -27,6 +28,7 @@ const INLINE_RENDERERS = {
   Link: LSLink,
   Block_reference: LSBlockReference,
   Code,
+  Src: LSSrc,
   Emphasis,
   Table: LSTable,
 }
@@ -46,6 +48,11 @@ export default function Inline({ inline, toc }) {
   } else if (CONSTAINER_INLINES.includes(type)) {
     return <LSInlines inlines={content} />
   } else {
+    if (!toc) {
+      console.warn('Missing renderer for type: ', type, content)
+      console.log('Wanna help? Contribute here: ')
+      console.log('https://github.com/logseq/publish')
+    }
     return null
   }
 }
