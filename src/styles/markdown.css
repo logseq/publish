@@ -987,3 +987,8 @@
   margin: 0 0.2em 0.25em -1.6em;
   vertical-align: middle;
 }
+
+.markdown-body ul {
+  list-style: none;
+  padding-left: 1em;
+}
