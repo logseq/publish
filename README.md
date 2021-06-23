@@ -1,6 +1,6 @@
 # Logseq Publish
 
-Logseq Publish is a app that generates a fast, SEO friendly and scalable website from your Logseq graph.
+Logseq Publish is an app that generates a fast, SEO friendly and scalable website from your Logseq graph.
 
 ## How to use
 
