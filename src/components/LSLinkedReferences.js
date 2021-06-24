@@ -40,10 +40,7 @@ function Reference({ pageName, block }) {
         backgroundColor="rgb(247, 246, 244)"
         padding="14px"
       >
-        <Box fontWeight="bold" as="span">
-          {pageName}
-        </Box>{' '}
-        - <LSBlockReference c={id} />
+        <Box fontWeight="bold">{pageName}</Box> <LSBlockReference c={id} />
       </Box>
     </Link>
   )
