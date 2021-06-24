@@ -10,6 +10,7 @@ export default function PageLink({ pageName }) {
   const linkRef = useRef()
   const router = useRouter()
   const currentPageName = router.query.name
+  const pagePath = createPagePath(pageName)
 
   useEffect(() => {
     if (currentPageName != pageName) {
@@ -33,10 +34,10 @@ export default function PageLink({ pageName }) {
         instance.destroy()
       }
     }
-  }, [currentPageName, pageName])
+  }, [currentPageName, pageName, pagePath])
 
   return (
-    <Link href={createPagePath(pageName)}>
+    <Link href={pagePath}>
       <Button ref={linkRef} variant="link">
         [[{pageName}]]
       </Button>
