@@ -1,10 +1,10 @@
 import LSInline from './LSInline'
 
-export default function LSInlines({ inlines, toc }) {
+export default function LSInlines({ inlines }) {
   return (
     <>
       {inlines.map((inline, index) => (
-        <LSInline key={index} inline={inline} toc={toc} />
+        <LSInline key={index} inline={inline} />
       ))}
     </>
   )

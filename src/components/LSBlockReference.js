@@ -11,11 +11,7 @@ export default function LSBlockReference({ c: id }) {
 
     return (
       <Link href={`/pages/${pageName}#${id}`}>
-        <Box
-          padding="7px"
-          className="ls-block-reference"
-          border="1px dashed black"
-        >
+        <Box as="span" className="ls-block-reference">
           <LSBlock b={referedBlock} />
         </Box>
       </Link>

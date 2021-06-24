@@ -18,6 +18,7 @@ export default function Layout({ nav, content, toc }) {
         flexDirection="column"
         height="100vh"
         padding="10px"
+        backgroundColor="rgb(247, 246, 244)"
       >
         {logo}
         {nav}
@@ -28,7 +29,7 @@ export default function Layout({ nav, content, toc }) {
         </Box>
         {content}
       </Box>
-      {toc}
+      {/* {toc} */}
     </Flex>
   )
 }

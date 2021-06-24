@@ -1,5 +1,7 @@
 import { Box } from '@chakra-ui/react'
+import { getLinkedRefs } from '../utils'
 import LSBlocks from './LSBlocks'
+import LSLinkedReferences from './LSLinkedReferences'
 
 export default function LSPage({ page }) {
   return (
@@ -13,6 +15,7 @@ export default function LSPage({ page }) {
     >
       <h1>{page['page-name']}</h1>
       <LSBlocks blocks={page.children} />
+      <LSLinkedReferences linkedRefs={getLinkedRefs(page['page-name'])} />
     </Box>
   )
 }

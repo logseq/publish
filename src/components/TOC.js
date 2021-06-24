@@ -22,7 +22,7 @@ function renderTitles(blocks, level = 1) {
               overflow="hidden"
             >
               <a href={`#${b.id}`}>
-                <LSInlines inlines={b.title} toc />
+                <LSInlines inlines={b.title} />
               </a>
               {isArray(b.children) &&
                 b.children.length > 0 &&
