@@ -1,3 +1,4 @@
+import { Box } from '@chakra-ui/layout'
 import LSBlock from './LSBlock'
 
 export default function LSBlocks({ blocks }) {
@@ -7,9 +8,9 @@ export default function LSBlocks({ blocks }) {
       <ul>
         {blocks.map((b) => {
           return (
-            <li key={b.id} id={b.id}>
+            <Box key={b.id} id={b.id}>
               <LSBlock b={b} />
-            </li>
+            </Box>
           )
         })}
       </ul>

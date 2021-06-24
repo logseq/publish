@@ -54,8 +54,8 @@ export default function Inline({ inline }) {
     return <InlineComponent c={content} />
   } else {
     console.warn('Missing renderer for type: ', type, content)
-    console.log('Wanna help? Contribute here: ')
-    console.log('https://github.com/logseq/publish')
+    console.warn('Wanna help? Contribute here: ')
+    console.warn('https://github.com/logseq/publish')
     return null
   }
 }
