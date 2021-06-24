@@ -12,9 +12,24 @@ export default function LSBlock({ b }) {
     { initializeWithStorageValue: false },
   )
 
+  const showToggleIcon = Array.isArray(b.children) && b.children.length > 0
+
+  const toggle = showToggleIcon && (
+    <Box
+      as="span"
+      marginRight="4px"
+      cursor="pointer"
+      onClick={() => setCollpased(!collpased)}
+    >
+      {collpased ? <ChevronRightIcon /> : <ChevronDownIcon />}
+    </Box>
+  )
+
+  const blockIsHeading = isHeading(b)
+
   let title
-  if (isHeading(b)) {
-    title = <LSHeading b={b} />
+  if (blockIsHeading) {
+    title = <LSHeading b={b} toggle={toggle} />
   } else if (Array.isArray(b.title)) {
     title = <LSInlines inlines={b.title} />
   }
@@ -26,23 +41,13 @@ export default function LSBlock({ b }) {
 
   const children = <LSBlocks blocks={b.children} />
 
-  const showToggleIcon = Array.isArray(b.children) && b.children.length > 0
-
   return (
     <>
-      <Flex alignItems="center">
-        {showToggleIcon && (
-          <Box
-            as="span"
-            marginRight="4px"
-            cursor="pointer"
-            onClick={() => setCollpased(!collpased)}
-          >
-            {collpased ? <ChevronRightIcon /> : <ChevronDownIcon />}
-          </Box>
-        )}
+      <Box>
+        {!blockIsHeading && toggle}
         {title}
-      </Flex>
+      </Box>
+
       {!collpased && (
         <Box marginTop="4px" marginLeft={showToggleIcon ? '4px' : 0}>
           {body}

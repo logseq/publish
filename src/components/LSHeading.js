@@ -1,7 +1,13 @@
+import { Box } from '@chakra-ui/react'
 import LSInlines from './LSInlines'
 
-export default function LSHeading({ b }) {
-  const content = <LSInlines inlines={b.title} />
+export default function LSHeading({ b, toggle }) {
+  const content = (
+    <Box>
+      {toggle}
+      <LSInlines inlines={b.title} />
+    </Box>
+  )
   const level = b['heading-level']
   const { id } = b
 
