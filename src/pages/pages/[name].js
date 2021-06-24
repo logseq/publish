@@ -25,5 +25,6 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const { name } = params
+  console.info('pageName', name)
   return { props: { name } }
 }
