@@ -1,9 +1,4 @@
-import {
-  CONTAINER_INLINE_TYPES,
-  getInlineContent,
-  getInlineType,
-  isInlineContainer,
-} from '../utils'
+import { getInlineContent, getInlineType, isInlineContainer } from '../utils'
 import LSBlockReference from './LSBlockReference'
 import LSInlines from './LSInlines'
 import LSLink from './LSLink'

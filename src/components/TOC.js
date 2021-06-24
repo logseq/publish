@@ -1,54 +1,51 @@
 import { Box } from '@chakra-ui/react'
-import { isArray } from 'lodash'
-import LSInlines from './LSInlines'
+import React from 'react'
+import { isHeading } from '../utils'
+import LSHeading from './LSHeading'
 
-const MAX_LEVEL = 3
+function renderHeadings(blocks) {
+  return blocks.map((b) => {
+    let heading
+    if (isHeading(b)) {
+      console.log('isHeading')
+      heading = (
+        <Box cursor="pointer" onClick={() => (window.location.hash = b.id)}>
+          <LSHeading b={b} />
+        </Box>
+      )
+    }
 
-function renderTitles(blocks, level = 1) {
-  if (level > MAX_LEVEL) {
-    return
-  }
-  return (
-    <Box as="ul" marginLeft="7px">
-      {blocks.map((b) => {
-        if (isArray(b.title) && b.title.length > 0) {
-          return (
-            <Box
-              as="li"
-              key={b.id}
-              maxWidth={200}
-              whiteSpace="nowrap"
-              textOverflow="ellipsis"
-              overflow="hidden"
-            >
-              <a href={`#${b.id}`}>
-                <LSInlines inlines={b.title} />
-              </a>
-              {isArray(b.children) &&
-                b.children.length > 0 &&
-                renderTitles(b.children, level + 1)}
-            </Box>
-          )
-        }
-      })}
-    </Box>
-  )
+    return (
+      <React.Fragment key={b.id}>
+        {heading}
+        {renderHeadings(b.children)}
+      </React.Fragment>
+    )
+  })
 }
 
 export default function TOC({ page }) {
   return (
     <Box
+      className="ls-toc"
       as="nav"
       display={{ base: 'none', lg: 'block' }}
       padding="10px"
-      fontSize="sm"
+      fontSize="smaller"
       alignSelf="flex-start"
       position="sticky"
       overflowY="auto"
       maxHeight="100vh"
       aria-label="table of contents"
     >
-      {renderTitles(page.children)}
+      <Box
+        as="h1"
+        cursor="pointer"
+        onClick={() => (window.location.hash = 'ls-page-title')}
+      >
+        {page.pageName}
+      </Box>
+      {renderHeadings(page.children)}
     </Box>
   )
 }

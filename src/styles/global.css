@@ -2,3 +2,23 @@
   max-height: 70vh;
   overflow-y: auto;
 }
+
+.ls-page.markdown-body ul {
+  padding-left: 0;
+}
+
+.ls-toc h2 {
+  margin-left: 4px;
+}
+.ls-toc h3 {
+  margin-left: 6px;
+}
+.ls-toc h4 {
+  margin-left: 8px;
+}
+.ls-toc h5 {
+  margin-left: 10px;
+}
+.ls-toc h6 {
+  margin-left: 12px;
+}

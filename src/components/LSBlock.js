@@ -1,6 +1,7 @@
 import { ChevronDownIcon, ChevronRightIcon } from '@chakra-ui/icons'
-import { Box, Flex } from '@chakra-ui/react'
+import { Box } from '@chakra-ui/react'
 import { useLocalStorageValue } from '@react-hookz/web'
+import { isHeading } from '../utils'
 import LSBlocks from './LSBlocks'
 import LSHeading from './LSHeading'
 import LSInlines from './LSInlines'
@@ -56,12 +57,4 @@ export default function LSBlock({ b }) {
       )}
     </>
   )
-}
-
-function isEmpty(b) {
-  return b?.title?.length === 0
-}
-
-function isHeading(b) {
-  return b['heading-level'] != null
 }

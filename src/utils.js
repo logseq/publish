@@ -124,3 +124,7 @@ export function createPagePath(pageName, id) {
   const hash = id != null ? `#${id}` : ''
   return `/pages/${encodeURIComponent(pageName)}${hash}`
 }
+
+export function isHeading(b) {
+  return b['heading-level'] != null
+}

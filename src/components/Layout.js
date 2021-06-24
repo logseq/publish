@@ -29,7 +29,7 @@ export default function Layout({ nav, content, toc }) {
         </Box>
         {content}
       </Box>
-      {/* {toc} */}
+      {toc}
     </Flex>
   )
 }
