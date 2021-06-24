@@ -3,7 +3,7 @@ import d from '../data.json'
 const pages = d.blocks.map((p) => {
   let pageName = p['page-name']
   if (pageName != null) {
-    pageName = pageName.replaceAll('/', ' | ')
+    pageName = pageName.split('/').join(' | ')
   }
 
   return {
