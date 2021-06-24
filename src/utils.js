@@ -109,3 +109,8 @@ function walkInline(inline, block, doInline, pageName) {
 }
 
 walkPagesTreeAndCreateSupportData()
+
+export function createPagePath(pageName, id) {
+  const hash = id != null ? `#${id}` : ''
+  return `/pages/${encodeURIComponent(pageName)}${hash}`
+}

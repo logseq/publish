@@ -53,9 +53,7 @@ export default function Inline({ inline }) {
   } else if (InlineComponent) {
     return <InlineComponent c={content} />
   } else {
-    console.warn('Missing renderer for type: ', type, content)
-    console.warn('Wanna help? Contribute here: ')
-    console.warn('https://github.com/logseq/publish')
+    console.warn('Missing renderer for type: ', type)
     return null
   }
 }

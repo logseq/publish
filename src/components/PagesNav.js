@@ -9,6 +9,7 @@ import {
 import Link from 'next/link'
 import { SearchIcon, CloseIcon } from '@chakra-ui/icons'
 import { useState } from 'react'
+import { createPagePath } from '../utils'
 
 export default function PagesNav({ pages }) {
   const [search, setSearch] = useState('')
@@ -39,7 +40,7 @@ export default function PagesNav({ pages }) {
       </InputGroup>
       <Box flex={1} minHeight={0} overflowY="auto">
         {filteredPages.map((page) => (
-          <Link key={page} href={`/pages/${encodeURIComponent(page)}`}>
+          <Link key={page} href={createPagePath(page)}>
             <Box
               cursor="pointer"
               overflow="hidden"

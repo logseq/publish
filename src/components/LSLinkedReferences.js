@@ -1,5 +1,6 @@
-import { Box, Button } from '@chakra-ui/react'
+import { Box } from '@chakra-ui/react'
 import Link from 'next/link'
+import { createPagePath } from '../utils'
 import LSBlockReference from './LSBlockReference'
 
 export default function LSLinkedReferences({ linkedRefs }) {
@@ -28,11 +29,9 @@ export default function LSLinkedReferences({ linkedRefs }) {
 
 function Reference({ pageName, block }) {
   const { id } = block
-  const search = id == null ? '' : `?#${id}`
-  const pagePath = `/pages/${encodeURIComponent(pageName)}${search}`
 
   return (
-    <Link href={pagePath}>
+    <Link href={createPagePath(pageName, id)}>
       <Box
         cursor="pointer"
         marginBottom="7px"

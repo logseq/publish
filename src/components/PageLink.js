@@ -1,16 +1,15 @@
 import { Button } from '@chakra-ui/react'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import { useEffect, useRef } from 'react'
 import tippy from 'tippy.js'
 import 'tippy.js/dist/tippy.css'
-import { useRouter } from 'next/router'
+import { createPagePath } from '../utils'
 
 export default function PageLink({ pageName }) {
   const linkRef = useRef()
   const router = useRouter()
   const currentPageName = router.query.name
-
-  const pagePath = `/pages/${encodeURIComponent(pageName)}`
 
   useEffect(() => {
     if (currentPageName != pageName) {
@@ -34,10 +33,10 @@ export default function PageLink({ pageName }) {
         instance.destroy()
       }
     }
-  }, [pagePath])
+  }, [currentPageName, pageName])
 
   return (
-    <Link href={pagePath}>
+    <Link href={createPagePath(pageName)}>
       <Button ref={linkRef} variant="link">
         [[{pageName}]]
       </Button>
