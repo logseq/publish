@@ -1,6 +1,11 @@
 import d from '../data.json'
 
-const pages = d.blocks
+const pages = d.blocks.map((p) => {
+  return {
+    ...p,
+    'page-name': p['page-name'].replaceAll('/', ' | '),
+  }
+})
 
 export const pageNames = pages.map((b) => b['page-name']).sort()
 export function getPageByName(name) {
