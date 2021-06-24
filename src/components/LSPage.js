@@ -13,9 +13,9 @@ export default function LSPage({ page }) {
       padding={{ md: 45, base: 15 }}
       className="ls-page markdown-body"
     >
-      <h1>{page['page-name']}</h1>
+      <h1>{page.pageName}</h1>
       <LSBlocks blocks={page.children} />
-      <LSLinkedReferences linkedRefs={getLinkedRefs(page['page-name'])} />
+      <LSLinkedReferences linkedRefs={getLinkedRefs(page.pageName)} />
     </Box>
   )
 }

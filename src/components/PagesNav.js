@@ -42,6 +42,7 @@ export default function PagesNav({ pages }) {
         {filteredPages.map((page) => (
           <Link key={page} href={createPagePath(page)}>
             <Box
+              title={page}
               cursor="pointer"
               overflow="hidden"
               textOverflow="ellipsis"

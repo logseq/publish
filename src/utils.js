@@ -1,15 +1,20 @@
 import d from '../data.json'
 
 const pages = d.blocks.map((p) => {
+  let pageName = p['page-name']
+  if (pageName != null) {
+    pageName = pageName.replaceAll('/', ' | ')
+  }
+
   return {
     ...p,
-    'page-name': p['page-name'].replaceAll('/', ' | '),
+    pageName,
   }
 })
 
-export const pageNames = pages.map((b) => b['page-name']).sort()
+export const pageNames = pages.map((b) => b.pageName).sort()
 export function getPageByName(name) {
-  return pages.find((p) => p['page-name'] === name)
+  return pages.find((p) => p.pageName === name)
 }
 
 let pageNameToLinkedRefs = {}
@@ -80,7 +85,7 @@ function runInlinePipeline(inline, block, pageName) {
 
 function walkPagesTreeAndCreateSupportData() {
   pages.forEach((page) => {
-    const pageName = page['page-name']
+    const pageName = page.pageName
     walkBlocks(page.children, runBlockPipeline, runInlinePipeline, pageName)
   })
 }
