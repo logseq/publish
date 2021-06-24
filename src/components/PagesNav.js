@@ -30,7 +30,6 @@ export default function PagesNav({ pages }) {
         <Input
           value={search}
           onChange={(event) => setSearch(event.target.value)}
-          placeholder="Type page name to search"
         />
         {searchNotEmpty && (
           <InputRightElement cursor="pointer" onClick={() => setSearch('')}>
