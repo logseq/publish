@@ -866,10 +866,10 @@
     prop-types "^15.7.2"
     tslib "^2.1.0"
 
-"@react-hookz/web@^3.3.0":
-  version "3.3.0"
-  resolved "https://registry.yarnpkg.com/@react-hookz/web/-/web-3.3.0.tgz#7c899e6d5af2308eb26d55aa6102bef11a1f1ef3"
-  integrity sha512-/SMzRMdeP3R3jhdPPly2qEaMvYvd7W0+XJhaPEPDyF+YZk6BjtI5hWNqTpeu8VxlkZB7GItv0ItQeEFfdnU93w==
+"@react-hookz/web@^3.5.0":
+  version "3.5.0"
+  resolved "https://registry.yarnpkg.com/@react-hookz/web/-/web-3.5.0.tgz#cfc5f2f76943a65f424c192bbbcb3abe342561c4"
+  integrity sha512-GrdEHpcAkD1AJON2fqv15Iq5Iszku+ItBb6SSeiYIJaWSogtbsPo3HtQVHKA+qmrtNfe6eCtwMYoLjHo+XwnkQ==
   dependencies:
     "@types/js-cookie" "^2.2.6"
     "@types/react" "^17.0.3"
