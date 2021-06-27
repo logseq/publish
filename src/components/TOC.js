@@ -40,10 +40,11 @@ export default function TOC({ page }) {
     >
       <Box
         as="h1"
+        fontWeight="bold"
         cursor="pointer"
         onClick={() => (window.location.hash = 'ls-page-title')}
       >
-        {page.pageName}
+        On this Page
       </Box>
       {renderHeadings(page.children)}
     </Box>
