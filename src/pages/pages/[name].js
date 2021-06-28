@@ -1,5 +1,3 @@
-import 'tippy.js/animations/shift-away-subtle.css'
-import 'tippy.js/themes/light.css'
 import Layout from '../../components/Layout'
 import LSPage from '../../components/LSPage'
 import PagesNav from '../../components/PagesNav'
