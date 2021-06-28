@@ -2,6 +2,23 @@
 
 Logseq Publish is a tool that generates a fast, SEO-friendly, and scalable website from your Logseq content.
 
+## Demo
+
+https://publish-kappa.vercel.app
+
+## How to use
+
+We plan to integrate the publish feature into the Logseq app and provide a one-click publish flow.
+
+For now, you need to:
+
+1. "Export as JSON" in the Logseq desktop app.
+2. Clone this repo.
+3. Copy the exported JSON to the root as data.json.
+4. Copy the whole `assets` folder from the Logseq repo to the `public` folder.
+5. Run `yarn && yarn dev` to start the site locally.
+6. (optional) [Deploy](https://nextjs.org/docs/deployment)
+
 ## Super Early!
 
 We release Logseq Publish in its early stage to better involve the community in its development. Let's help make it better by:
@@ -30,19 +47,6 @@ Logseq Publish is a new approach for sharing your Logseq content more lightly.
 2. Logseq Publish provides code to transform the JSON data into structures more suitable for static rendering.
 3. Logseq Publish provides React components for various Logseq block types and other UI elements. You can check them at `src/components`. Component names begin with "LS" are for Logseq-specific.
 4. Logseq Publish utilizes [Next.js](https://nextjs.org/) to generate static HTML at build time.
-
-## How to use
-
-We plan to integrate the publish feature into the Logseq app and provide a one-click publish flow.
-
-For now, you need to:
-
-1. "Export as JSON" in the Logseq desktop app.
-2. Clone this repo.
-3. Copy the exported JSON to the root as data.json.
-4. Copy the whole `assets` folder from the Logseq repo to the `public` folder.
-5. Run `yarn && yarn dev` to start the site locally.
-6. (optional) [Deploy](https://nextjs.org/docs/deployment)
 
 ## FAQ
 
