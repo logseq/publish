@@ -26,7 +26,7 @@ Logseq Publish is a new approach for sharing your Logseq content more lightly.
 
 ## How does it work
 
-1. Logseq exports a JSON file, which a tree structure consisting of various kinds of block types.
+1. Logseq exports a JSON file, which a tree structure consisting of various kinds of block types. (the sample `data.json` and `assets` are from the official Logseq documentation)
 2. Logseq Publish provides code to transform the JSON data into structures more suitable for static rendering.
 3. Logseq Publish provides React components for various Logseq block types and other UI elements. You can check them at `src/components`. Component names begin with "LS" are for Logseq-specific.
 4. Logseq Publish utilizes [Next.js](https://nextjs.org/) to generate static HTML at build time.
