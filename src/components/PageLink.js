@@ -4,6 +4,7 @@ import { useRouter } from 'next/router'
 import { useEffect, useRef } from 'react'
 import tippy from 'tippy.js'
 import 'tippy.js/dist/tippy.css'
+import 'tippy.js/themes/light.css'
 import { createPagePath } from '../utils'
 
 export default function PageLink({ pageName }) {

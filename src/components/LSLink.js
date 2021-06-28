@@ -1,4 +1,3 @@
-import 'tippy.js/dist/tippy.css'
 import { pageNames } from '../utils'
 import ExternalLink from './ExternalLink'
 import PageLink from './PageLink'
