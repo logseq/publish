@@ -13,7 +13,7 @@ const pages = d.blocks.map((p) => {
 })
 
 const DEFAULT_HOME_PAGE = 'Contents'
-export const homePage = d.homePage ?? DEFAULT_HOME_PAGE
+export const homepage = d.homepage ?? DEFAULT_HOME_PAGE
 
 export const pageNames = pages.map((b) => b.pageName).sort()
 export function getPageByName(name) {
