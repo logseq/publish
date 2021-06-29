@@ -17,7 +17,7 @@ For now, you need to:
 3. Copy the exported JSON to the root as data.json.
 4. Copy the whole `assets` folder from the Logseq repo to the `public` folder.
 5. Run `yarn && yarn dev` to start the site locally.
-6. (optional) [Deploy](https://nextjs.org/docs/deployment)
+6. Run `yarn export` to generate the published static website in the folder `out`. You can deploy it to anywhere which supports static hosting, for example [Github Pages](https://guides.github.com/features/pages/)
 
 ## Super Early!
 
