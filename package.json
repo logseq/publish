@@ -13,7 +13,7 @@
     "@chakra-ui/react": "^1.6.4",
     "@emotion/react": "^11.4.0",
     "@emotion/styled": "^11.3.0",
-    "@react-hookz/web": "^3.5.0",
+    "@react-hookz/web": "^3.8.0",
     "autoprefixer": "^10.2.6",
     "framer-motion": "^4.1.17",
     "js-cookie": "^2.2.1",
@@ -24,7 +24,7 @@
     "tippy.js": "^6.3.1"
   },
   "devDependencies": {
-    "eslint": "^7.29.0",
+    "eslint": "^7.30.0",
     "eslint-config-next": "^11.0.1"
   }
 }
