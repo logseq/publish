@@ -4,7 +4,7 @@ Logseq Publish is a tool that generates a fast, SEO-friendly, and scalable websi
 
 ## Demo
 
-https://publish-kappa.vercel.app
+https://logseq.github.io/publish-demo/
 
 ## How to use
 
