@@ -4,7 +4,7 @@ Logseq Publish is a tool that generates a fast, SEO-friendly, and scalable websi
 
 ## Demo
 
-https://logseq.github.io/publish-demo/
+https://eloquent-keller-6512b6.netlify.app/
 
 ## How to use
 
