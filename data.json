@@ -35538,13 +35538,8 @@
               "children": [],
               "title": [
                 [
-                  "Link",
-                  {
-                    "url": ["Search", "Videos"],
-                    "label": [["Plain", ""]],
-                    "full_text": "[[Videos]]",
-                    "metadata": ""
-                  }
+                  "Tag",
+                  [["Plain", "Videos"]]
                 ]
               ],
               "body": [],
