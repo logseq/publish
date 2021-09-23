@@ -2,6 +2,7 @@ import { getInlineContent, getInlineType, isInlineContainer } from '../utils'
 import LSBlockReference from './LSBlockReference'
 import LSInlines from './LSInlines'
 import LSLink from './LSLink'
+import LSTag from './LSTag'
 import LSSrc from './LSSrc'
 import LSTable from './LSTable'
 
@@ -31,6 +32,7 @@ function Emphasis({ c }) {
 const INLINE_RENDERERS = {
   Plain,
   Link: LSLink,
+  Tag: LSTag,
   Block_reference: LSBlockReference,
   Code,
   Src: LSSrc,
