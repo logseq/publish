@@ -1,3 +1,7 @@
+# Status
+
+This project is no longer maintained. See https://github.com/pengx17/logseq-publish and https://github.com/sawhney17/logseq-schrodinger for alternative approaches to publishing Logseq graphs.
+
 # Logseq Publish
 
 Logseq Publish is a tool that generates a fast, SEO-friendly, and scalable website from your Logseq content.
